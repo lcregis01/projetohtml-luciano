@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dicas de Saúde e Alimentação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Dicas de Saúde e Alimentação</h1>
+            <nav>
+                <ul>
+                    <li><a href="javascript:void(0);" onclick="showPage('saude')">Dicas de Saúde</a></li>
+                    <li><a href="javascript:void(0);" onclick="showPage('alimentacao')">Alimentação Saudável</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Dicas de Saúde -->
+        <section class="content page" id="saude">
+            <h2>Cuide da sua saúde</h2>
+            <div class="dicas-container">
+                <div class="dica">
+                    <div>Exercite-se regularmente - A atividade física é essencial para manter o corpo em forma e saudável.</div>
+                    <div class="line-separator"></div>
+                </div>
+                <div class="dica">
+                    <div>Beba água - A hidratação adequada é crucial para o bom funcionamento do organismo.</div>
+                    <div class="line-separator"></div>
+                </div>
+                <div class="dica">
+                    <div>Durma bem - O sono de qualidade ajuda na recuperação e no equilíbrio do corpo.</div>
+                    <div class="line-separator"></div>
+                </div>
+                <div class="dica">
+                    <div>Reduza o estresse - Técnicas de relaxamento como meditação e yoga podem ser muito úteis.</div>
+                    <div class="line-separator"></div>
+                </div>
+                <div class="dica">
+                    <div>Evite o consumo excessivo de álcool e cigarro - Essas substâncias prejudicam a saúde a longo prazo.</div>
+                    <div class="line-separator"></div>
+                </div>
+                <div class="dica">
+                    <div>Faça exames periódicos - A prevenção é fundamental para detectar doenças precocemente.</div>
+                    <div class="line-separator"></div>
+                </div>
+                <div class="dica">
+                    <div>Mantenha uma boa higiene - Lavar as mãos regularmente ajuda a evitar doenças.</div>
+                    <div class="line-separator"></div>
+                </div>
+            </div>
+            <a href="javascript:void(0);" class="btn" onclick="showPage('alimentacao')">Veja dicas de alimentação saudável</a>
+        </section>
+
+        <!-- Dicas de Alimentação Saudável -->
+        <section class="content page" id="alimentacao">
+            <h2>Como manter uma alimentação saudável</h2>
+            <div class="dicas-container">
+                <div class="dica">
+                    <div>Coma mais frutas e vegetais - Eles são ricos em vitaminas, minerais e fibras.</div>
+                    <div class="line-separator"></div>
+                </div>
+                <div class="dica">
+                    <div>Prefira alimentos integrais - Arroz integral, pães e massas são mais nutritivos do que os refinados.</div>
+                    <div class="line-separator"></div>
+                </div>
+                <div class="dica">
+                    <div>Evite alimentos processados - Eles costumam ter muitos conservantes e sódio.</div>
+                    <div class="line-separator"></div>
+                </div>
+                <div class="dica">
+                    <div>Inclua proteínas magras - Como peixes, frango e leguminosas.</div>
+                    <div class="line-separator"></div>
+                </div>
+                <div class="dica">
+                    <div>Controle as porções - Comer com moderação é a chave para uma boa alimentação.</div>
+                    <div class="line-separator"></div>
+                </div>
+                <div class="dica">
+                    <div>Evite açúcar em excesso - Consumo excessivo de açúcar está relacionado a diversas doenças.</div>
+                    <div class="line-separator"></div>
+                </div>
+                <div class="dica">
+                    <div>Coma devagar - Mastigar bem os alimentos melhora a digestão e a saciedade.</div>
+                    <div class="line-separator"></div>
+                </div>
+            </div>
+            <a href="javascript:void(0);" class="btn" onclick="showPage('saude')">Voltar para as dicas de saúde</a>
+        </section>
+    </main>
+
+    <!-- Botão de Contato -->
+    <div class="contact-btn" onclick="window.location.href='mailto:contato@dominio.com'">
+        <span>💬</span>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 - Dicas de Saúde e Bem-Estar</p>
+    </footer>
+
+    <script>
+        // Função para alternar entre as páginas
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+
+            const pageToShow = document.getElementById(pageId);
+            pageToShow.classList.add('active');
+            
+            // Garantir que a página seja rolada para o topo
+            scrollToTop();
+        }
+
+        // Função para rolar a página para o topo
+        function scrollToTop() {
+            window.scrollTo(0, 0);
+        }
+
+        // Inicializa a página mostrando a seção de "saúde"
+        showPage('saude');
+    </script>
+</body>
+</html>

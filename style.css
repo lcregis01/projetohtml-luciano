@@ -1,0 +1,236 @@
+/* Reset de estilos padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página com Flexbox */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f4f4f9, #e0e0e0);
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #2d97a2;
+    padding: 20px 0;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header h1 {
+    font-size: 2em;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    font-size: 1.1em;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffeb3b;
+    transform: scale(1.1);
+}
+
+/* Seção principal */
+main {
+    padding: 40px 20px;
+    flex: 1;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.content h2 {
+    font-size: 2.5em;
+    color: #2d97a2;
+    margin-bottom: 20px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.content p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #555;
+    text-align: justify;
+    opacity: 0;
+    animation: fadeIn 1s 0.5s forwards;
+}
+
+/* Estilo das dicas (em formato vertical com linha separadora) */
+.dicas-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.dica {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 67%;
+    padding: 15px;
+    background-color: white;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dica div {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.dica:last-child div {
+    margin-right: 0;
+}
+
+.line-separator {
+    width: 2px;
+    height: 100%;
+    background-color: #2d97a2;
+    margin: 0 20px;
+}
+
+.content a.btn {
+    display: inline-block;
+    background-color: #ffeb3b;
+    color: #333;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 16%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.content a.btn:hover {
+    background-color: #fbc02d;
+    transform: translateY(-5px);
+}
+
+/* Rodapé */
+footer {
+    background-color: #2d97a2;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Efeito de transição suave entre páginas */
+.page {
+    display: none;
+}
+
+.active {
+    display: block;
+    animation: fadeInPage 1s ease-in-out;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInPage {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos do botão de contato redondo */
+.contact-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #ff5722;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+    transform: scale(1.1);
+    background-color: #e64a19;
+}
+
+.contact-btn:active {
+    transform: scale(1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 10px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .content h2 {
+        font-size: 2em;
+    }
+
+    .content p {
+        font-size: 1.1em;
+    }
+
+    .content a.btn {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
